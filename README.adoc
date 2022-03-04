@@ -1,9 +1,49 @@
 = Command Line Wordle
-:Author:    Roy Phillips
-:Email:     phillips.roy@gmail.com
+:Author:   Roy Phillips
+:Email:    phillips.roy@gmail.com
 :Date:     2022-03-01
 
-An implementation of a Wordle game for the command line, written in Haskell
+An implementation of a Wordle game for the command line, written in Haskell.
+
+_Because everybody should have a Wordle implementation in their repo._
+
+Build & Play
+~~~~~~~~~~~~
+Requires a Haskell compiler (e.g., GHC: https://www.haskell.org/ghc/download_ghc_9_0_2.html)
+
+Build:
+[source,shell]
+% ghc Main.hs
+
+Play:
+[source,shell]
+% ./Main
+Play Wordl!
+1 Enter guess: adieu
+
+Feedback:
+[source,shell]
+  [_____] misplaced: [ a| | | e| ] exclude: [diu]
+
+Here, no letters matched the solution, the letters 'a' and 'e' are in the solution but appeared in the wrong position,
+and the letters 'd', 'i' and 'u' do not appear in the solution.
+[source,shell]
+2 Enter guess: treat
+[___a_] misplaced: [ | | e| e| ] exclude: [dirtu]
+
+Now, 'a' is in the correct place, but 'e' was again misplaced
+[source,shell]
+3 Enter guess: spear
+[___a_] misplaced: [ | p| e| e| ] exclude: [dirstu]
+4 Enter guess: plead
+[p__a_] misplaced: [ | | e| e| ] exclude: [dilrstu]
+5 Enter guess: penal
+[pe_a_] misplaced: [ | | n| | ] exclude: [dilrstu]
+6 Enter guess: pecan
+Congrats! Got it in 6
+
+
+
 
 Components
 ~~~~~~~~~~
