@@ -1,0 +1,35 @@
+= Command Line Wordle
+:Author:    Roy Phillips
+:Email:     phillips.roy@gmail.com
+:Date:     2022-03-01
+
+An implementation of a Wordle game for the command line, written in Haskell
+
+Components
+~~~~~~~~~~
+
+Wordle.hs
+^^^^^^^^^
+
+The game engine, defines the state of the game (Round) and evaluates the player's input
+
+Main.hs
+^^^^^^^
+
+A CLI implementing the game play, recursively accepts guesses from the player, asks Wordle
+to score the guess and displays feedback
+
+Dictionary.hs
+^^^^^^^^^^^^^
+
+Loads the word list from the 'words.txt' resource, and selects a random word for the game
+
+Helpers.hs
+^^^^^^^^^^
+
+Common helper functions used in the game
+
+WordleSpec.hs
+^^^^^^^^^^^^^
+
+Executable specification of the game's correct behaviour
